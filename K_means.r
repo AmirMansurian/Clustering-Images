@@ -2,33 +2,36 @@ K_means <- function(Vectors, Z)
 {  
 
     C <- rep(0, 20000);
+    Cprime <- rep(0, 20000);
     Bound <- dim(Z)[2];
+    counter=0;
       
     while (TRUE)
     {
-      flag <- FALSE;
       
+      Cprime <- C;
+      counter = counter + 1;
+
       for (i in 1:20000)
       {
-          C[i] <- 1;
           Distance <- norm(Vectors[, i]-Z[, 1], type = "2");
-            
+          C[i] <- 1;
+          
           for (j in 2:Bound)
           {
             if (norm(Vectors[, i]-Z[, j], type = "2") < Distance)
             {
               Distance <- norm(Vectors[, i]-Z[, j], type = "2");
               C[i] <- j;
-              Flag <- TRUE;
             }
           }
       }
       
-      if (flag == FALSE)
+      if (all(Cprime == C))
       {
         break;
       }
-      
+      print(counter);
 
       for (j in 1:Bound)
       {
@@ -46,6 +49,7 @@ K_means <- function(Vectors, Z)
         Z[, j] <- Z[, j]/n;
       }
     }
+    
 
     return(C);
 }
