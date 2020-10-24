@@ -21,19 +21,3 @@ for (i in 1:10)
 
 Result <- rep(0, 20000);
 Result <- K_means(Vectors, Z);
-
-
-t <- rep(0, 1200);
-count =0 ;
-for (i in 1:20000)
-{
-    if (Result[i] == 1)
-    {
-      t = t + Data[i, ];
-      count=count+1;
-    }
-}
-
-t = t/count;
-b = matrix(t, nrow = 40, ncol = 30, byrow = TRUE);
-image(b);

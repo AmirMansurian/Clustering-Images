@@ -8,6 +8,13 @@ K_means <- function(Vectors, Z)
       
     while (TRUE)
     {
+      par(mfrow=c(2,5));
+      for (j in 1:Bound)
+      {
+        b = matrix(Z[, j], nrow = 40, ncol = 30, byrow = TRUE);
+        image(t(apply(b, 2, rev)));
+      }
+      
       
       Cprime <- C;
       counter = counter + 1;
