@@ -7,7 +7,7 @@
 #### Input :
 ##### K_means function get 1200 * 20000 matrix containing Training images and 1200 * 10 matrix as initial Representative of groups
 
-#### OUT :
+#### Output :
 ##### Returns 1200 * 10 matrix contianing final Representative of groups
 
 
@@ -16,6 +16,8 @@
 #### Run of code:
 ##### In each iteration choose proper Reoresentative for each image and update Representatives:
 ###### Below is test for K=10 groups with 10 random initial Reprensentatives. as you can se below for K=10 groups results are not exact. also final result depends on initial Representatives.
+
+![Alt Text](https://raw.githubusercontent.com/AmirMansurian/Clustering-Images/master/Run_test.gif)
 
 
 
